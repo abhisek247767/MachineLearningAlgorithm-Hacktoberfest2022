@@ -30,6 +30,8 @@ Install the required libraries using:
 ```bash
 pip install tensorflow numpy matplotlib lxml
 
+```
+
 
 # Data Preparation
 
@@ -45,7 +47,7 @@ The annotations are in XML format. The `parse_annotation` function extracts obje
 ```python
 def parse_annotation(annotation_file):
     # Parsing logic
-
+```
 
 # Loading Data
 
@@ -54,7 +56,7 @@ The `load_data` function loads and preprocesses the images and annotations for t
 ```python
 def load_data(annotations_dir, images_dir):
     # Loading and preprocessing logic
-
+```
 
 # Model Architecture
 
@@ -63,7 +65,7 @@ The model is based on Faster R-CNN with a ResNet50 backbone, pre-trained on Imag
 ```python
 def create_faster_rcnn():
     # Model creation logic
-
+```
 
 # Training
 
@@ -76,7 +78,7 @@ The model is compiled and trained using the following parameters:
 ```python
 model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
 model.fit(X_train, y_train, epochs=10, batch_size=32, validation_split=0.2)
-
+```
 
 # Evaluation
 
@@ -88,14 +90,14 @@ The model can be evaluated on a separate test set. Here, we demonstrate how to l
 ```python
 def preprocess_image(image_path):
     # Preprocessing logic
-
+```
 
 
 ## Interpret Predictions
 ```python
 def interpret_prediction(prediction, threshold=0.6):
     # Interpretation logic
-
+```
 
 # Usage
 To use the model for predicting helmet presence on new images, follow these steps:
@@ -103,17 +105,17 @@ To use the model for predicting helmet presence on new images, follow these step
 ## Load the saved model:
 ```python
 loaded_model = tf.keras.models.load_model("/content/drive/MyDrive/helmet_detection_model.h5")
-
+```
 ## Make Predictions:
 ```python
 prediction = predict_image(image_path, loaded_model)
 result = interpret_prediction(prediction[0][0])
-
+```
 
 ## Display Image with Prediction:
 ```python
 display_image_with_prediction(image_path, result)
-
+```
 
 # Result and Accuracy
 
